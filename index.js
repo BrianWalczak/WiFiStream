@@ -81,5 +81,5 @@ app.listen(settings.port, '0.0.0.0', () => {
 	  settings.defaultPath = settings.defaultPath.slice(0, -1);
 	}
 	
-  console.log(`Server is running at http://localhost:${port} with default path ${settings.defaultPath}!`);
+  console.log(`Server is running at http://localhost:${settings.port} with default path ${settings.defaultPath}!`);
 });
