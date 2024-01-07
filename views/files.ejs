@@ -51,7 +51,7 @@
 					<i class="material-icons"><%= file.directory == true ? 'folder' : 'description' %></i>
 					<h5><%= file.name %></h5>
 					<br>
-					<a href='/files/<%= file.path %>' class="btn btn-success">Open</a>
+					<a href='/files/<%= file.path %>?root=<%= root %>' class="btn btn-success">Open</a>
 				</div>
 			<% }); %>
 		</div>
