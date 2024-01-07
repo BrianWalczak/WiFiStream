@@ -45,9 +45,10 @@ app.get('/files/*', async (req, res) => {
 		
 		if(fileData.isDirectory()) {
 			const files = await readDirectory(reqPath);
+			const root = req.query.root || reqPath;
 			if(files.constructor !== Array) return res.status(404).redirect("/?error=" + files);
-		
-			res.status(200).render('files', { fileList: files, currentPath: reqPath });
+
+			res.status(200).render('files', { fileList: files, currentPath: reqPath, root });
 		} else {
 			res.status(200).sendFile(reqPath);
 		}
