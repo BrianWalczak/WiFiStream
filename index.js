@@ -3,11 +3,11 @@ const path = require('path');
 const ejs = require('ejs');
 const fs = require('fs').promises;
 const app = express();
-const port = 1010;
 
 const settings = {
 	defaultPath: '/Volumes/USB Stick/', // The default path to open
 	updateDefaultOnChange: false, // Update the defaultPath to the most recent directory file search
+	port: 1010, // Port that the server will be hosted on
 };
 
 app.set('view engine', 'ejs');
@@ -76,7 +76,7 @@ app.use((req, res, next) => {
   res.status(404).redirect('/');
 });
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(settings.port, '0.0.0.0', () => {
 	if (settings.defaultPath.lastIndexOf('/') === settings.defaultPath.length - 1) {
 	  settings.defaultPath = settings.defaultPath.slice(0, -1);
 	}
