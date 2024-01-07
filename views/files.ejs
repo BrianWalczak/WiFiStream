@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>WiFi Stream App</title>
+		<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css'>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	</head>
+	<style>
+		.fileList {
+			margin: 0 auto;
+			width: 100%;
+			height: auto;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		}
+		
+		.fileList .file {
+			padding: 20px;
+			margin: 10px;
+			background-color: #e8e8e8;
+			border-radius: 15px;
+			width: 300px;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+		}
+		
+		.fileList .file a {
+			padding: 10px;
+			font-weight: 600;
+			border-radius: 10px;
+		}
+		
+		.fileList .file .material-icons {
+			font-size: 60px;
+			color: #0069d9;
+			padding-bottom: 20px;
+		}
+	</style>
+	<body style="padding: 20px;"><center>
+		<div class="alert alert-danger" role="alert" style="display: none;"></div>
+		
+		
+		<h1>File Manager</h1>
+		<p>Reading files from <%= currentPath %></p><br>
+		
+		<div class="fileList">
+			<% fileList.forEach(function(file) { %>
+				<div class="file">
+					<i class="material-icons"><%= file.directory == true ? 'folder' : 'description' %></i>
+					<h5><%= file.name %></h5>
+					<br>
+					<a href='/files/<%= file.path %>' class="btn btn-success">Open</a>
+				</div>
+			<% }); %>
+		</div>
+		<br>
+		<script>
+			const parameters = new URLSearchParams(window.location.search);
+
+			if (parameters.has('error')) {
+			  document.querySelector('.alert').innerText = parameters.get('error');
+				document.querySelector('.alert').style.display = "block";
+			}
+		</script>
+	</center></body>
+</html>
