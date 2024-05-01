@@ -34,5 +34,11 @@ $ node . # Start the Node program
 ```
 Once you run ``node .``, the web server will start automatically!
 
+## Plugins
+WiFiStream includes pre-installed plugin(s) that you can use to enhance your experience!
 
+We're currently working on this feature, so be sure to stick around! 😉
+
+
+<br>
   <p align="center">Made with ♡ by <a href="https://www.brianwalczak.com">Briann</a></p>
