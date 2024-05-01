@@ -1,3 +1,4 @@
+###### (psst! keep an eye out on this repository, we're releasing an awesome feature shortly 👀)
 <h1 align="center">WiFi Stream - The wireless file manager</h1>
 
 <p align="center">A local web server (powered by Express) to manage files over your secure network (WiFi).<br><br></p>
