@@ -1,0 +1,17 @@
+{
+  "name": "wifistream",
+  "version": "1.0.0",
+  "description": "A local web server (powered by Express) to manage files over your secure network (WiFi).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Walczak",
+  "license": "Apache License 2.0",
+  "dependencies": {
+    "ejs": "*",
+    "express": "*",
+    "fs": "*",
+    "path": "*"
+  }
+}
